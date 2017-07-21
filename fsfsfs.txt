@@ -1,0 +1,50 @@
+@app.route('/')
+def tweb():
+	return flask.render_template('sentiment.html')
+	
+@app.route('/sentiment', methods=['GET','POST'])
+def sentiment():
+	return flask.render_template('sentiment.html')
+
+@app.route('/pos007', methods=['GET','POST'])
+def pos007():
+	return flask.render_template('pos.html')
+	
+@app.route('/pos007/posg', methods=['GET','POST'])
+def posg():
+	return flask.render_template('postggr.py')
+
+@app.route('/pos007/senti12', methods=['GET','POST'])
+def senti12():
+	return flask.render_template('postggr.py')
+	
+@app.route('/pos007/pos', methods=['GET','POST'])
+def pos():
+	return flask.render_template('postggr.py')
+
+def get_resource_as_string(name, charset='utf-8'):
+    with app.open_resource(name) as f:
+        return f.read().decode(charset)
+
+app.jinja_env.globals['get_resource_as_string'] = get_resource_as_string
+
+
+
+
+Sentiment Analysis of tweets
+</title>
+</head>
+<body>
+<img src={{ url_for('static',filename='Senti2.jpg') }} alt="HTML5 Icon" width="1500" height="20">
+<nav>
+<ul>
+<li class="active"><a href="{{ url_for('sentiment') }}">INTRO</a></li>
+<li><a href="{{ url_for('pos007') }}">POS Tagger</a>
+</li>
+</ul>
+<div class="clearfix"></div>
+</nav>
+<form id="myForm"  action={{url_for('searchtweet') }} method='post'>
+ <font color="orange">Enter to search</font><input type="text" name="SEARCH_BOX" size="100">
+<input type="submit" value="SEARCH">
+</form>

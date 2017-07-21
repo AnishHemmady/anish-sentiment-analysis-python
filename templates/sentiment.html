@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<style type=text/css>{{ get_resource_as_string('static/data.css') }} </style>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>
+Sentiment Analysis of tweets
+</title>
+</head>
+<body>
+<img src={{ url_for('static',filename='Senti2.jpg') }} alt="HTML5 Icon" width="1500" height="20">
+<nav>
+<ul>
+<li class="active"><a href="{{ url_for('sentiment') }}">INTRO</a></li>
+<li><a href="{{ url_for('pos007') }}">POS Tagger</a>
+</li>
+</ul>
+<div class="clearfix"></div>
+</nav>
+<form id="myForm"  action={{url_for('searchtweet') }} method='post'>
+ <font color="orange">Enter to search</font><input type="text" name="SEARCH_BOX" size="100">
+<input type="submit" value="SEARCH">
+</form>
+
+<table border="1" width="1200" height="500" bordercolor="red">
+<tr>
+<td rowspan="2"></td>
+</tr>
+<tr>
+<td colspan="2"><frame src="frame1.html"></td>
+</tr>
+
+</table> 
+</body>
+</html>

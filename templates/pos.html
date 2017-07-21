@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<style type=text/css>{{ get_resource_as_string('static/data.css') }} </style>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>
+Sentiment Analysis of tweets
+</title>
+</head>
+<body>
+<img src="{{url_for('static', filename='senti.png', width=40,height=20)}}" />
+<nav>
+<ul>
+<li class="active"><a href="{{ url_for('senti12') }}">INTRO</a></li>
+<li><a href="{{ url_for('pos') }}">POS TAGGER</a></li>
+</ul>
+<div class="clearfix"></div>
+</nav>
+<form id="myForm"  action={{url_for('posg') }} method='post'>
+ <font color="orange">POS TAG YOUR SENTENCE AND GET ALSO A SENTIMENT!!!</font><input type="text" name="SEARCH_BOX" size="100">
+<input type="submit" value="TAG IT SENTI">
+</form>
+
+<textarea name="textarea"  rows="6"  cols="28">
+{{recs}}
+------------------------------
+{{recs1}}
+------------------------------
+{{recs2}}
+{{recs3}}
+
+
+
+
+
+ 
+
+
+</textarea>
+</table> 
+</body>
+</html>
